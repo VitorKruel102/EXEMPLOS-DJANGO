@@ -14,7 +14,7 @@ class Produtos(models.Model):
 
     titulo = models.CharField(max_length=50)
     descricao = models.TextField()
-    categoria = models.CharField(max_length=20, choices=CATEGORIAS)
+    categoria = models.CharField(max_length=7, choices=CATEGORIAS)
     imagem_produto = models.ImageField(upload_to='produtos/%Y/%m/%d')
 
     def save(self, *args, **kwargs):
