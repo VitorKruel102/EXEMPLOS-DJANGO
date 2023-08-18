@@ -14,6 +14,12 @@ class Exemplo18HomeViewsTestCase(TestCase):
 
     def test_status_code_200(self):
         url = reverse('exemplo18:home')
-        respota = self.client.get(url)
+        resposta = self.client.get(url)
 
-        self.assertEqual(respota.status_code, 200)
+        self.assertEqual(resposta.status_code, 200)
+
+    def test_template_esta_correto(self):
+        url = reverse('exemplo18:home')
+        resposta = self.client.get(url)
+
+        self.assertTemplateUsed(resposta, 'app_exemplo18/pages/home.html')
